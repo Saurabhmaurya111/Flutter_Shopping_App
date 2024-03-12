@@ -1,5 +1,5 @@
 # shop_app
-<h1>Under Construction</h1>
+Under Construction
 A new Flutter project.
 
 ## Getting Started
