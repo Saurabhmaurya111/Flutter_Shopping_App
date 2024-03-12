@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variable.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,8 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> filters = const ['All', 'Adidas', 'Nike', 'Bata'];
-  late String selectedFilter; 
-  
+  late String selectedFilter;
 
   @override
   void initState() {
@@ -69,7 +69,9 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: GestureDetector(
                       onTap: () {
-                        selectedFilter = filter;
+                        setState(() {
+                          selectedFilter = filter;
+                        });
                       },
                       child: Chip(
                         backgroundColor: selectedFilter == filter
@@ -95,6 +97,12 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (context, index){
+              
+              },
+            )
           ],
         ),
       ),
